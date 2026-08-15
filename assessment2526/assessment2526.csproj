@@ -12,8 +12,8 @@
 		<Nullable>enable</Nullable>
 		<MauiVersion>9.0.120</MauiVersion>
 
-		<ApplicationTitle>assessment2526</ApplicationTitle>
-		<ApplicationId>com.companyname.assessment2526</ApplicationId>
+		<ApplicationTitle>Banking and Budgeting App</ApplicationTitle>
+		<ApplicationId>com.karim.bankingandbudgeting</ApplicationId>
 
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
@@ -30,6 +30,12 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|AnyCPU'">
 		<EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+		<AndroidKeyStore>False</AndroidKeyStore>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|AnyCPU'">
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	  <AndroidKeyStore>False</AndroidKeyStore>
 	</PropertyGroup>
 
 	<ItemGroup>
