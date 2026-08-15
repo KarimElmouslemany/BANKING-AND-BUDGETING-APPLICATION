@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="assessment2526.Sign_up"
+             Title="Signup"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+
+        <VerticalStackLayout Padding="24" Spacing="12">
+            <Button
+                Text="?"
+                HorizontalOptions="End"
+                WidthRequest="44"
+                HeightRequest="44"
+                CornerRadius="25"
+                Padding="0"
+                Clicked="OnHelpClicked"
+                SemanticProperties.Description="Help"
+                SemanticProperties.Hint="Shows help for the sign up screen" 
+            />
+            <Label 
+                Text="Sing Up"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Padding="15"
+                FontSize="Title"
+                SemanticProperties.HeadingLevel="Level1" 
+            />
+        <Label 
+            Text="Username"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            />
+
+        <Entry 
+           x:Name="SignUp_DisplayName_Input"
+            Placeholder="Enter a username"  
+            Keyboard="Text"
+             WidthRequest="200"
+             SemanticProperties.Description="Username"
+             SemanticProperties.Hint="Enter a username for your new account"
+            />
+
+        <Label Text="Email"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               />
+
+        <Entry 
+            x:Name="SignUp_username_Input"
+            Placeholder="name@example.com" 
+            Keyboard="Email"
+            WidthRequest="200"
+            SemanticProperties.Description="Email address"
+           SemanticProperties.Hint="Enter your email address" 
+            />
+            
+        <Label Text="Password"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+            
+        <Entry x:Name="SignUp_password_Input"
+               Placeholder="Create a password"
+               IsPassword="True"
+               WidthRequest="200"
+              SemanticProperties.Description="Password"
+              SemanticProperties.Hint="Create a password for your new account"/>
+        <Button
+            Text="Sign Up"
+      
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="10,15"
+            WidthRequest="200"
+            Clicked="SignUpButton"
+           SemanticProperties.Hint="Creates a new account with the details above"/>
+        <Button
+            Text="Back to login page"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+             Margin="10,15"
+            WidthRequest="200"
+            Clicked="Back_to_login_Button"
+            SemanticProperties.Hint="Returns to the login page"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

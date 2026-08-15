@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!--access precies location of device  --> 
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!--access approxmit location -->
+	<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!--access location always--> 
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+<queries>
+	<intent>
+		<action android:name="android.intent.action.TTS_SERVICE" />
+	</intent>
+</queries>
+	<application
+        android:allowBackup="true"
+        android:icon="@mipmap/appicon"
+        android:supportsRtl="true">
+
+		<meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBHWtMCAoKCMZnDfBL_BB0M4j52cU57N5A" />
+
+	</application>
+
+</manifest>

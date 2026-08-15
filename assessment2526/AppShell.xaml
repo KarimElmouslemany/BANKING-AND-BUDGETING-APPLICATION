@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="assessment2526.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:assessment2526"
+    Title="assessment2526"
+     FlyoutBehavior="Disabled"
+    >
+    <ShellContent
+     Title="the login page"
+     ContentTemplate="{DataTemplate local:Loginpage}"
+     Route="loginpage"
+     Shell.TabBarIsVisible="False"/>
+ 
+
+    <ShellContent
+             Title="the Sign up page"
+            ContentTemplate="{DataTemplate local:Sign_up}"
+            Route="Sign_up" 
+            Shell.TabBarIsVisible="False"/>
+    <TabBar>
+
+        <ShellContent
+            Title="the budgets page"
+            ContentTemplate="{DataTemplate local:Budgets}"
+            Icon="saving.png"
+            Route="Bugetingpage" />
+        
+        <ShellContent
+            Title="the bank page "
+            Icon="bank.png"
+            ContentTemplate="{DataTemplate local:BankPage}"
+            Route="Bank"/>
+        
+        <ShellContent 
+            Title="Affordability Check"  
+            Icon="checker.png"
+            ContentTemplate="{DataTemplate local:Affordability_checker}"
+            Route="Affordability_Check"/>
+        
+        <ShellContent
+            Title="Settings"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Icon="settings.png"
+            Route="Settings_pages"/>
+        
+    </TabBar>
+
+</Shell>

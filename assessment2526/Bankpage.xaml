@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+            xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit" 
+             x:Class="assessment2526.BankPage"
+             Title="Bank">
+ 
+  <ScrollView>
+      
+    <VerticalStackLayout>
+        <!---->
+        <Label
+            x:Name="displaying_username"
+            Text="Welcome"
+            HorizontalOptions="Center" 
+            FontSize="Title"
+           SemanticProperties.HeadingLevel="Level1"/>
+       <!---->
+        <Border 
+ 
+                StrokeThickness="5"
+                StrokeShape ="RoundRectangle 15"
+                WidthRequest="400"
+                HeightRequest="400"
+                Margin="20">
+                <StackLayout>
+                    <Label 
+                        Text="£ 0"
+                        FontSize="Large" 
+                        FontAttributes="Bold"
+                        x:Name="amount_displayed"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Margin="20"
+                        SemanticProperties.HeadingLevel="Level2"
+                        SemanticProperties.Description="Current balance"
+                        SemanticProperties.Hint="Your current account balance"/>
+
+                    <Entry x:Name="amount_inputed"
+                        Placeholder="Enter a amount"
+                      SemanticProperties.Description="Amount"
+                      SemanticProperties.Hint="Enter an amount in pounds, then tap Add or Withdraw" 
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         Margin="20"
+                         MaxLength="9"
+                        WidthRequest="200"
+                        Keyboard="Numeric"/>
+                    <Button 
+                     
+                        Clicked="Adding_button"
+                        Text="Add"
+                            WidthRequest="200"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                        SemanticProperties.Description="Add money"
+                        SemanticProperties.Hint="Adds the entered amount to your balance" 
+                    />
+                    <Button 
+                       
+                        Clicked="takeaway_button"
+                        Text="Withdraw"
+                        WidthRequest="200"
+                        Margin="20"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center" 
+                         SemanticProperties.Description="Withdraw money"
+                        SemanticProperties.Hint="Subtracts the entered amount from your balance"/>
+                    <Button 
+                    
+                        Clicked="location_getter"
+                        Text="Find ATMs"
+                        WidthRequest="200"
+                        Margin="20"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center" 
+                          SemanticProperties.Description="Find nearby ATMs"
+                        SemanticProperties.Hint="Shows ATMs near your location on the map" />
+
+                </StackLayout>
+                     
+        </Border>
+        
+        <Border 
+          
+                StrokeThickness="5"
+                StrokeShape ="RoundRectangle 15"
+                WidthRequest="400"
+                HeightRequest="400"
+                Margin="20">
+                <StackLayout x:Name="transfers_stack">
+                    <Label 
+                        Text="Transaction history"
+                         FontAttributes="Bold"
+                         HorizontalOptions="Center"
+                        Margin="10"
+                        SemanticProperties.HeadingLevel="Level2"
+                        />
+
+                </StackLayout>
+        
+        </Border>
+
+       <Border 
+         StrokeThickness="5"
+         StrokeShape ="RoundRectangle 15"
+         WidthRequest="400"
+         HeightRequest="400"
+         Margin="20">
+                <maps:Map x:Name="ATM_map"
+                          HeightRequest="400"
+                          WidthRequest="400"
+                          IsShowingUser="true"
+                    SemanticProperties.Description="Map showing your location and nearby ATMs"
+                   SemanticProperties.Hint="Tap Find ATMs to populate the map with nearby cash points" 
+                />
+       </Border>
+
+    </VerticalStackLayout>
+      
+  </ScrollView>
+    
+</ContentPage>

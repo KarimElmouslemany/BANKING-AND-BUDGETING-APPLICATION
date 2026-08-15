@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="assessment2526.Budgets"
+             Title="Budgets">
+
+    <Grid RowDefinitions="Auto,*">
+        <VerticalStackLayout  Grid.Row="0" Padding="10">
+            <!-- Add Rowdefinitions for the grids, which are used to define the row height with the grid.Row 0 takeing as much height as the content inside it needs.   -->
+            <Label 
+                x:Name="dsiplying_name"
+                Text="Welcome to the budgeting section"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1" 
+            />
+            <Grid>
+
+                <Border
+                    x:Name="BudgetPanel"
+                   StrokeThickness="5"
+                    StrokeShape ="RoundRectangle 15"
+                     HorizontalOptions="Fill"
+                    Margin="10"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark={StaticResource SurfaceDark}}">
+                    <Border.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Left" Swiped="OnBudgetPanelSwiped"/>
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout Padding="15" Spacing="10">
+                        <Label Text="Add a Budget" 
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               FontSize="20"
+                              SemanticProperties.HeadingLevel="Level2"/>
+
+                        <Entry 
+                         x:Name="budget_Title"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center"
+                          Placeholder="Title"
+                          WidthRequest="200"
+                          IsSpellCheckEnabled="True"
+                          SemanticProperties.Description="Budget title"
+                          SemanticProperties.Hint="Enter a name for this new budget"
+                          Keyboard="Text"
+                        />
+
+                        <Entry x:Name="budget_amount"
+                            WidthRequest="200"
+                            HorizontalOptions="Center"
+                            Margin="5"
+                            VerticalOptions="Center"
+                            Keyboard="Numeric"
+                            Placeholder="Budget amount"
+                            SemanticProperties.Hint="Enter the budget amount in pounds" 
+                         />
+
+                        <Button 
+                            Text="Creat a new budget"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            Margin="15"
+                           WidthRequest="200"
+                            Clicked="budget_section_display"
+                           SemanticProperties.Hint="Creates a new budget with the title and amount above"
+                         />
+
+                    </VerticalStackLayout>
+                </Border>
+
+       
+                <Border x:Name="BlankPanel"
+      
+                     StrokeThickness="5"
+                     StrokeShape ="RoundRectangle 15"
+                    HorizontalOptions="Fill"
+                    Margin="10"
+                    IsVisible="False"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark={StaticResource SurfaceDark}}">
+                
+                    <Border.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Right" Swiped="UpdatingBudgetPanelSwiped"/>
+                    </Border.GestureRecognizers>
+                
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                        <Label
+                            Text="Update a Budget"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            FontSize="20"
+                           SemanticProperties.HeadingLevel="Level2"
+                        />
+
+                        <Entry x:Name="budget_Title_finder"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Placeholder="Title"
+                            WidthRequest="200"
+                            IsSpellCheckEnabled="True"
+                            Keyboard="Text"
+                            SemanticProperties.Description="Budget title to update"
+                            SemanticProperties.Hint="Enter the name of an existing budget"
+                        />
+                        <Entry x:Name="adding_to_budget"
+                      
+                             WidthRequest="200"
+                            HorizontalOptions="Center"
+                            Margin="5"
+                            VerticalOptions="Center"
+                            Keyboard="Numeric"
+                            Placeholder="Amount to add"
+                           SemanticProperties.Description="Amount to add to budget"
+                           SemanticProperties.Hint="Enter how much to add to this budget in pounds"   
+                        />
+
+                        <Button 
+                            Text="Add amount to the budget"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                            Margin="15"
+                            WidthRequest="200"
+                           Clicked="adding_things_to_budget_button"
+                           SemanticProperties.Hint="Adds the entered amount to the named budget"/>
+
+                    </VerticalStackLayout>
+                   
+                </Border>
+
+            </Grid>
+        </VerticalStackLayout>
+        
+        <ScrollView Grid.Row="1">
+            <!-- Add row definitions for the grids, which are used to define the rows height with the grid. Row 1 takes the rest of the height space available.    -->
+                <VerticalStackLayout>
+                    <Border 
+                 
+                    StrokeThickness="5"
+                    StrokeShape ="RoundRectangle 15"
+                    HorizontalOptions="Fill"
+                        Padding="15"
+                        Margin="20"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark={StaticResource SurfaceDark}}">
+                        
+                            <VerticalStackLayout x:Name="Iteam">
+
+                            </VerticalStackLayout>
+                        
+
+                    </Border>
+                    <Button 
+                        Text="Logout"
+                      
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                         WidthRequest="200"
+                        Clicked="logout_button"
+                         SemanticProperties.Hint="Logs you out and returns to the login screen"/>
+                </VerticalStackLayout>
+          </ScrollView>
+    </Grid>
+</ContentPage>

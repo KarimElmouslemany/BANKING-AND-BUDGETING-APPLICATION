@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="assessment2526.Loginpage"
+             Title="Login" 
+             Shell.NavBarIsVisible="False">
+    <!--https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html  for the title of the page-->
+    <ScrollView> <!--https://www.w3.org/WAI/WCAG22/Understanding/reflow.html for the scroll view-->
+        <VerticalStackLayout Padding="24" Spacing="12">
+            <!--https://www.w3.org/WAI/WCAG22/Understanding/reflow.html      --> 
+            <Button
+                    Text="?"
+                    HorizontalOptions="End" 
+                    WidthRequest="44"
+                    HeightRequest="44"
+                    CornerRadius="25"
+                    Padding="0"
+                    Clicked="OnHelpClicked"
+                     SemanticProperties.Description="Help"
+                     SemanticProperties.Hint="Shows help for the login screen" 
+             />
+            <Label 
+                 Text="Login"
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center"
+                 SemanticProperties.HeadingLevel="Level1"
+                 FontSize="Title"     
+            />
+            <Label 
+                Text="Username"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            
+            <Entry x:Name="display_name_input" 
+               Placeholder="Enter useranme"
+                WidthRequest="200"
+               Keyboard="Text"
+               SemanticProperties.Description="Username"
+              SemanticProperties.Hint="Enter the username for your account"/>
+            <Label 
+              Text="Email"
+              HorizontalOptions="Center"
+             VerticalOptions="Center"/>
+        
+            <Entry 
+                 x:Name="login_username_input"
+                 Placeholder="name@example.com"
+                 WidthRequest="200"
+                 Keyboard="Email"
+               SemanticProperties.Description="Email address"
+                SemanticProperties.Hint="Enter the email linked to your account"/>
+            <Label
+               Text="Password"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            
+            <Entry 
+               x:Name="login_password_input"
+               WidthRequest="200"
+               Placeholder="Enter your password"
+               IsPassword="True"
+               SemanticProperties.Description="Password"
+               SemanticProperties.Hint="Enter your account password"/>
+            <Button
+     
+                Text="Login"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                Clicked="LoginButton"
+                SemanticProperties.Hint="Signs you in with the details above"
+            />
+            <Button
+         
+                Text="Sign Up"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                Clicked="GotoSingup"
+               SemanticProperties.Hint="Opens the sign up screen to create a new account" 
+            />
+            <Button 
+         
+                Text="Text to speech OFF"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                Clicked="text_speech_toggle"
+                SemanticProperties.Description="Text to speech toggle"
+                SemanticProperties.Hint="Turns text to speech on or off"
+                />
+
+    </VerticalStackLayout>
+  </ScrollView>
+
+</ContentPage>
+

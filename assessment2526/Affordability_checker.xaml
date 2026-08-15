@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="assessment2526.Affordability_checker"
+             Title="Affordability_checker">
+    <ScrollView>
+        <VerticalStackLayout x:Name="layout_display" Padding="20" Spacing="12">
+
+            <Border
+                StrokeThickness="5"
+                StrokeShape ="RoundRectangle 15"
+                WidthRequest="400"
+                HeightRequest="400"  
+                Margin="20">
+
+                <toolkit:CameraView 
+                    x:Name="Camera" 
+                    SemanticProperties.Description="Camera view"
+                    SemanticProperties.Hint="Live camera preview. Tap Take Photo below to capture an image of an item."/>
+            </Border>
+
+            <Entry 
+              x:Name="iteam_input_amount"
+              VerticalOptions="Center"
+              HorizontalOptions="Center"
+              Placeholder="Enter an amount"
+              Margin="20"
+              MaxLength="9"
+              WidthRequest="200"
+              Keyboard="Numeric"
+              SemanticProperties.Description="Item price"
+              SemanticProperties.Hint="Enter the price of the item you want to check in pounds"
+             />
+
+            <Button  
+                
+                 Command="{Binding CaptureImageCommand, Source={x:Reference Camera}}"
+                Text="Take Photo"
+                WidthRequest="200"
+                Margin="20"
+                Clicked="Photo_taken"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" 
+                SemanticProperties.Description="Take photo"
+                SemanticProperties.Hint="Captures a photo of the item with the camera above"
+                />
+
+
+            <Image x:Name="image_preview"
+                   WidthRequest = "150"
+                    HeightRequest = "150"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Captured photo preview"
+                    SemanticProperties.Hint="Shows the photo you just took of the item"
+                   />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
