@@ -33,23 +33,23 @@ The application is built using .NET MAUI with XAML used to create the user inter
 
 Users can register and log in using Firebase email and password authentication. Authentication requests are handled asynchronously, with validation and user-friendly error handling included.
 
-Banking
+**Banking:**
 
 Users can record deposits and withdrawals, with the application automatically recalculating their current balance based on their transactions.
 
-Savings Goals
+**Savings Goals:**
 
 Savings goals are represented using C# objects and collections.
 
 Users can create and monitor individual goals, with completion percentages and progress bars showing how close they are to reaching each target.
 
-ATM Finder
+**ATM Finder:**
 
 The application can access the user's location and retrieve nearby ATM information using the OpenStreetMap Overpass API.
 
 ATM data is requested asynchronously and processed from JSON before being displayed to the user. The implementation also includes retry handling for API requests.
 
-Affordability
+**Affordability:**
 
 The application includes an affordability feature designed to help users determine whether a purchase fits within their available balance and budget.
 
