@@ -17,15 +17,15 @@ Retrieve ATM data using OpenStreetMap
 Multi-page navigation using .NET MAUI Shell
 Settings functionality
 ## ⚙️ Technologies
-C#
-.NET MAUI
-XAML
-Firebase Authentication
-OpenStreetMap
-Overpass API
-REST API integration
-JSON
-Git / GitHub
+* C#
+* .NET MAUI
+* XAML
+* Firebase Authentication
+* OpenStreetMap
+* Overpass API
+* REST API integration
+* JSON
+* Git / GitHub
 
 ## ⚒️ How It Works
 
